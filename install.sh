@@ -10,5 +10,5 @@ iptables-save > /etc/iptables_yg_baru_dibikin.conf
 wget -O /etc/network/if-up.d/iptables "https://raw.githubusercontent.com/tunneler123/openvpn/master/iptables"
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
-wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client"
+wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client.conf"
 sed -i $MYIP2 /etc/openvpn/client.ovpn;
