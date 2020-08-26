@@ -4,6 +4,7 @@ wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/
 cd /etc/openvpn/
 tar xf openvpn.tar
 wget -O /etc/openvpn/server.conf "https://raw.githubusercontent.com/tunneler123/openvpn/master/server.conf"
+wget -O /etc/openvpn/udp.conf "https://raw.githubusercontent.com/tunneler123/openvpn/master/udp.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
@@ -15,4 +16,5 @@ MYIP=`curl -s ifconfig.me`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 service openvpn restart
 wget -O /etc/openvpn/client.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client.conf"
-sed -i $MYIP2 /etc/openvpn/client.ovpn;
+sed -i $MYIP2 /etc/openvpn/tcp.ovpn;
+sed -i $MYIP2 /etc/openvpn/udp.ovpn;
