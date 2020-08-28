@@ -6,6 +6,7 @@ rm /var/www/html/index.html
 rm /var/www/html/index.nginx-debian.html
 wget https://raw.githubusercontent.com/tunneler123/openvpn/master/index.html
 cp index.html /var/www/html
+wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/openvpn/master/certi.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
 wget -O /etc/openvpn/server.conf "https://raw.githubusercontent.com/tunneler123/openvpn/master/server.conf"
