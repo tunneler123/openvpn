@@ -17,8 +17,8 @@ chmod +x /etc/network/if-up.d/iptables
 MYIP=`curl -s ifconfig.me`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 service openvpn restart
-wget -O /etc/openvpn/tcp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client.conf"
-wget -O /etc/openvpn/udp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client2.conf"
+wget -O /var/www/html/tcp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client.conf"
+wget -O /var/www/html/udp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client2.conf"
 rm /var/www/html/index.nginx-debian.html
 sed -i $MYIP2 /var/www/html/tcp.ovpn;
 sed -i $MYIP2 /var/www/html/udp.ovpn;
