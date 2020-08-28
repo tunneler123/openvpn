@@ -25,3 +25,5 @@ wget -O /var/www/html/tcp.ovpn "https://raw.githubusercontent.com/tunneler123/op
 wget -O /var/www/html/udp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client2.conf"
 sed -i $MYIP2 /var/www/html/tcp.ovpn;
 sed -i $MYIP2 /var/www/html/udp.ovpn;
+sudo systemctl start openvpn@server
+clear
