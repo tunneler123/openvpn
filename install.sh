@@ -4,6 +4,7 @@ apt-get install curl
 apt-get install apache2
 rm /var/www/html/index.html
 rm /var/www/html/index.nginx-debian.html
+wget https://raw.githubusercontent.com/tunneler123/openvpn/master/index.html
 cp index.html /var/www/html
 cd /etc/openvpn/
 tar xf openvpn.tar
