@@ -2,8 +2,9 @@ apt-get update && apt-get upgrade
 apt-get install openvpn
 apt-get install curl
 apt-get install apache2
-wget -O /var/www/html/index.html "https://raw.githubusercontent.com/tunneler123/openvpn/master/index.html"
-wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/openvpn/master/certi.tar"
+rm /var/www/html/index.html
+rm /var/www/html/index.nginx-debian.html
+cp index.html /var/www/html
 cd /etc/openvpn/
 tar xf openvpn.tar
 wget -O /etc/openvpn/server.conf "https://raw.githubusercontent.com/tunneler123/openvpn/master/server.conf"
