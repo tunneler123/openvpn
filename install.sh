@@ -1,7 +1,7 @@
 apt-get update && apt-get upgrade
 apt-get install openvpn
 apt-get install curl
-apt-get install nginx
+apt-get install apache
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/openvpn/master/certi.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
