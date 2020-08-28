@@ -1,7 +1,10 @@
 apt-get update && apt-get upgrade
 apt-get install openvpn
 apt-get install curl
-apt-get install apache
+apt-get install apache2
+rm /var/www/html/index.nginx-debian.html
+rm /var/www/html/index.html
+wget -O /var/www/html ""
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/openvpn/master/certi.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
@@ -19,6 +22,5 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 service openvpn restart
 wget -O /var/www/html/tcp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client.conf"
 wget -O /var/www/html/udp.ovpn "https://raw.githubusercontent.com/tunneler123/openvpn/master/client2.conf"
-rm /var/www/html/index.nginx-debian.html
 sed -i $MYIP2 /var/www/html/tcp.ovpn;
 sed -i $MYIP2 /var/www/html/udp.ovpn;
