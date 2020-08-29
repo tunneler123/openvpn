@@ -28,4 +28,6 @@ wget -O /var/www/html/udp.ovpn "https://raw.githubusercontent.com/tunneler123/op
 sed -i $MYIP2 /var/www/html/tcp.ovpn;
 sed -i $MYIP2 /var/www/html/udp.ovpn;
 sudo systemctl start openvpn@server
-reboot
+service openvpn restart
+clear
+echo DONE INSTALL
