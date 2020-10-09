@@ -29,5 +29,7 @@ sed -i $MYIP2 /var/www/html/tcp.ovpn;
 sed -i $MYIP2 /var/www/html/udp.ovpn;
 sudo systemctl start openvpn@server
 service openvpn restart
+cd /usr/bin
+wget -O add-user "https://github.com/tunneler123/openvpn/edit/master/add-user.sh"
 clear
 echo DONE INSTALL
