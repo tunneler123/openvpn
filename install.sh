@@ -31,5 +31,7 @@ sudo systemctl start openvpn@server
 service openvpn restart
 cd /usr/bin
 wget -O add-user "https://github.com/tunneler123/openvpn/edit/master/add-user.sh"
+echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
+chmod +x add-user
 clear
 echo DONE INSTALL
