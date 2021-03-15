@@ -1,21 +1,21 @@
 {
   "inbounds": [
     {
-      "port": 8089,
+      "port": 10000,
       "listen":"127.0.0.1",
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
-        "decryption": "none",
         "clients": [
           {
             "id": "ad136a60-af16-4635-89b1-60ef6b899253",
-            "level": 0
+            "alterId": 64
           }
         ]
       },
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
+        "path": "/ray"
         }
       }
     }
