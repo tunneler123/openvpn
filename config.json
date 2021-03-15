@@ -1,7 +1,7 @@
 {
   "inbounds": [
     {
-      "port": 10000,
+      "port": 8089,
       "listen":"127.0.0.1",
       "protocol": "vmess",
       "settings": {
