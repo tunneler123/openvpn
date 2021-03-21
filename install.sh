@@ -1,8 +1,8 @@
 apt-get update && apt-get upgrade
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-apt-get install openvpn
-apt-get install curl
-apt-get install apache2
+apt-get install openvpn -y
+apt-get install curl -y
+apt-get install apache2 -y
 rm /var/www/html/index.html
 rm /var/www/html/index.nginx-debian.html
 wget https://raw.githubusercontent.com/tunneler123/openvpn/master/index.html
