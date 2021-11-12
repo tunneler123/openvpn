@@ -1,4 +1,4 @@
-apt-get update && apt-get upgrade
+apt-get update && apt-get upgrade -y
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 apt-get install openvpn -y
 apt-get install curl -y
