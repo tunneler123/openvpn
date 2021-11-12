@@ -7,6 +7,30 @@ rm /var/www/html/index.html
 rm /var/www/html/index.nginx-debian.html
 wget https://raw.githubusercontent.com/tunneler123/openvpn/master/index.html
 cp index.html /var/www/html
+########NEW EDIT############
+rm /etc/apache2/ports.conf
+wget -O /etc/apache2/ports.conf "https://raw.githubusercontent.com/tunneler123/openvpn/master/ports.conf"
+service apache2 restart
+mkdir /etc/scripts/
+wget -O /etc/scripts/script.py https://raw.githubusercontent.com/tunneler123/openvpn/master/script.py
+apt-get install screen -y
+apt-get install python -y
+chmod a+x script.py
+cd /usr/bin
+wget -O account https://raw.githubusercontent.com/tunneler123/sshplus/master/account.sh
+screen -dmS screen python ./script.py
+cat <<EOF >>start
+screen -dmS screen python /etc/scripts/script.py
+EOF
+cat <<EOF >>stop
+pkill python
+EOF
+chmod +x start
+chmod +x stop
+chmod +x account
+###TUNNELER###
+start
+########END EDIT NEW########
 wget -O /etc/openvpn/openvpn.tar "https://raw.githubusercontent.com/tunneler123/openvpn/master/certi.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
@@ -34,4 +58,8 @@ wget -O add-user "https://raw.githubusercontent.com/tunneler123/openvpn/master/a
 echo "0 0 * * * root /sbin/reboot" > /etc/cron.d/reboot
 chmod +x add-user
 clear
-echo DONE INSTALL
+echo -e "\e[1;32m PHTUNNELER AUTOSCRIPT \e[0m"
+echo -e "\e[1;32m SSH INSTALLED DONE \e[0m"
+echo -e "\e[1;32m DEFAULT WS OPENVPN PORT IS 80 \e[0m"
+echo -e "\e[1;32m DEFAULT APACHE2 PORT IS 81(DOWNLOAD CONFIG) \e[0m"
+echo -e "\e[1;32m type "account" to add user \e[0m"
